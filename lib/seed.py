@@ -18,11 +18,26 @@ if __name__ == '__main__':
 
     fake = Faker()
 
-    genres = ['action', 'adventure', 'strategy',
-        'puzzle', 'first-person shooter', 'racing']
-    platforms = ['nintendo 64', 'gamecube', 'wii', 'wii u', 'switch',
-        'playstation', 'playstation 2', 'playstation 3', 'playstation 4',
-        'playstation 5', 'xbox', 'xbox 360', 'xbox one', 'pc']
+    genres = ['action', 'adventure', 'strategy', 'puzzle', 'first-person shooter', 'racing']
+
+platforms = ['nintendo 64', 'gamecube', 'wii', 'wii u', 'switch',
+             'playstation', 'playstation 2', 'playstation 3', 'playstation 4',
+             'playstation 5', 'xbox', 'xbox 360', 'xbox one', 'pc']
+
+games = {
+    'action': ['Grand Theft Auto V', 'Red Dead Redemption 2', 'Assassin\'s Creed Valhalla'],
+    'adventure': ['The Legend of Zelda: Breath of the Wild', 'Uncharted 4: A Thief\'s End', 'God of War'],
+    'strategy': ['Civilization VI', 'XCOM 2', 'Total War: Warhammer II'],
+    'puzzle': ['Tetris', 'Portal 2', 'The Witness'],
+    'first-person shooter': ['Call of Duty: Modern Warfare', 'Battlefield V', 'Halo Infinite'],
+    'racing': ['Mario Kart 8 Deluxe', 'Forza Horizon 4', 'Gran Turismo Sport'],
+}
+
+# Example usage:
+print("List of adventure games:")
+for game in games['adventure']:
+    print(game)
+
 
     games = []
     for i in range(50):

@@ -19,14 +19,14 @@ if __name__ == '__main__':
 
     fake = Faker()
 
-    genres = ['action', 'adventure', 'strategy',
-        'puzzle', 'first-person shooter', 'racing']
-    platforms = ['nintendo 64', 'gamecube', 'wii', 'wii u', 'switch',
-        'playstation', 'playstation 2', 'playstation 3', 'playstation 4',
-        'playstation 5', 'xbox', 'xbox 360', 'xbox one', 'pc']
+    genres = ['action', 'adventure', 'strategy', 'puzzle', 'first-person shooter', 'racing']
 
-    games = []
-    for i in range(50):
+platforms = ['nintendo 64', 'gamecube', 'wii', 'wii u', 'switch',
+             'playstation', 'playstation 2', 'playstation 3', 'playstation 4',
+             'playstation 5', 'xbox', 'xbox 360', 'xbox one', 'pc']
+
+games = []
+for i in range(50):
         game = Game(
             title=fake.unique.name(),
             genre=random.choice(genres),
@@ -41,8 +41,8 @@ if __name__ == '__main__':
         games.append(game)
 
 
-    users = []
-    for i in range(25):
+users = []
+for i in range(25):
         user = User(
             name=fake.name(),
         )
@@ -53,8 +53,8 @@ if __name__ == '__main__':
         users.append(user)
 
 
-    reviews = []
-    for game in games:
+reviews = []
+for game in games:
         for i in range(random.randint(1,5)):
             user = random.choice(users)
             if game not in user.games:
@@ -71,6 +71,6 @@ if __name__ == '__main__':
 
             reviews.append(review)
 
-    session.bulk_save_objects(reviews)
-    session.commit()
-    session.close()
+session.bulk_save_objects(reviews)
+session.commit()
+session.close()
